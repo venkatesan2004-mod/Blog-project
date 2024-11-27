@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+   
+   
+{%block content%}
+    <main class="container mx-auto px-4 py-6">
+        <h2 class="text-4xl font-bold mb-4">Contact Us</h2>
+        {%for field in form%}
+        {%if field.errors%}
+        <div class="col-12"><span class="fw-bold">{{field.label_tag}}</span>
+            {% for error in field.errors %}
+            <span class="text-danger">{{error}}</span>
+            {%endfor%}
+            </div>
+        {%endif%}
+        
+        {%endfor%}
+        {%if success_msg%}
+        <div class="alert alert-success" role="alert" >{{success_msg}}</div>
+        {%endif%}
+        <form method="POST" class="w-full max-w-lg">
+             {% csrf_token %}             
+
+            <div class="flex items-center mb-4">
+                <label for="name" class="w-1/4" >Name:</label>
+                <input type="text" id="name" style="background-color:grey" class="border rounded px-2 py-1 w-3/4" value="{{name}}" name="name">
+            </div>
+            <div class="flex items-center mb-4">
+                <label for="email" class="w-1/4">Email:</label>
+                <input type="email" id="email" class="border rounded px-2 py-1 w-3/4" style="background-color:grey" value="{{email}}" name="email">
+            </div>
+            <div class="flex items-center mb-4">
+                <label for="message" class="w-1/4">Message:</label>
+                <textarea id="message" class="border rounded px-2 py-1 w-3/4" rows="4" style="background-color:grey" value="{{message}}" name="message"></textarea>
+            </div>
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded " style="background-color:black;">Submit</button>
+        </form>
+    </main>
+{% endblock %}

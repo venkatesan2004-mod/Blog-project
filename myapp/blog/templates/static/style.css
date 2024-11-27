@@ -1,0 +1,27 @@
+body{
+
+    overflow: auto;
+    background-color: grey;
+    background-attachment:scroll;
+
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    background-image: url('images/pexels-veeterzy-303383.jpg');
+    
+}
+
+success{
+    
+background-color: grey;
+font-size: medium;
+text-decoration: lightgreen;
+
+}
+p{
+    color: white;
+}
+div{
+    color: white;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Chatbot</title>
+  
+    {% load static %}
+    <link rel="stylesheet" href={% static "chatbot.css" %}>
+</head>
+
+<img src={% static 'images/chatbot.jpg'%} height="300" width="300" border="5">
+<body style="background-color:grey;">
+ 
+    <div class="chat-container">
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type a message......">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    
+    </div>
+   
+   
+    <script src={% static 'chatbot.js'%} >
+        
+    </script>
+</html>
